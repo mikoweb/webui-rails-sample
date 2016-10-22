@@ -1,0 +1,5 @@
+{
+    "copy": [
+        "moment/min/moment.min.js"
+    ]
+}

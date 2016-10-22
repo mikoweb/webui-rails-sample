@@ -1,0 +1,6 @@
+{
+    "version": "~0.3.0",
+    "directory": "private/webui",
+    "vendorDir": "public/vendor",
+    "publicDir": "public/webui"
+}

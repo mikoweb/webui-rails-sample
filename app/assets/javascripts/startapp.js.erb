@@ -1,0 +1,42 @@
+(function (basePath) {
+    "use strict";
+    startapp({
+        path: {
+            base: basePath,
+            webui: basePath + 'vendor',
+            'public': basePath + 'webui'
+        },
+        requirejs: {
+          baseUrl: basePath + 'js',
+          paths: {
+            moment: '{{path}}/moment/min/moment.min'
+          }
+        },
+        timeout: 60000,
+        res: {
+            resources: {
+                framework: [{
+                    url: ['<%= javascript_path('framework.js') %>'],
+                    async: true
+                }],
+                core: [{
+                    url: ['<%= javascript_path('core.js') %>'],
+                    async: true
+                }],
+                theme: [{
+                    url: ['<%= javascript_path('theme.js') %>'],
+                    async: true
+                }]
+            },
+            dependencies: {
+                framework: [],
+                core: ['framework'],
+                theme: ['core']
+            },
+            unknown: []
+        },
+        translation: {},
+        locale: '<%= I18n.locale %>',
+        cssloader: {}
+    });
+}('<%= asset_path('/') %>'));

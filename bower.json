@@ -1,0 +1,7 @@
+{
+    "name": "webui-rails-sample",
+    "dependencies": {
+        "bootstrap": "~4.0.0",
+        "moment": "~2.15.1"
+    }
+}

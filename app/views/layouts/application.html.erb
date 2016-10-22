@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="<%= I18n.locale %>" class="no-js">
+<head>
+    <meta charset="utf-8">
+    <title>WebUI Rails Sample</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'theme' %>
+    <%= yield :stylesheets %>
+    <%= javascript_include_tag 'webui/engine/js/loader.min' %>
+    <%= javascript_include_tag 'startapp' %>
+</head>
+<body>
+    <%= content_for?(:content) ? yield(:content) : yield %>
+    <%= yield :javascripts %>
+    <script type="text/javascript">jsloader.init();</script>
+</body>
+</html>

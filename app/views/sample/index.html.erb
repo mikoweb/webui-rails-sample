@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Random from server</h2>
+  <div class="sample" id="sample"></div>
+</div>
+<% content_for :javascripts do %>
+    <script type="x-template/underscore" id="tplSample">
+      <%= File.read(Rails.root.join(*%w( app views sample sample.ejs))).html_safe %>
+    </script>
+    <script type="text/javascript">
+      jsloader.onLoad('core', function () {
+        require(['app/app/sample'], function (sample) {
+          new sample.default();
+        });
+      });
+    </script>
+<% end %>
